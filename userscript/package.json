@@ -1,0 +1,14 @@
+{
+  "name": "sap-addon-userscript",
+  "version": "1.26.1",
+  "description": "Tampermonkey/Violentmonkey userscript port of the SAP Addon browser extension.",
+  "scripts": {
+    "build": "node build/build.js",
+    "test": "node build/build.js && node test/smoke.test.js"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}
