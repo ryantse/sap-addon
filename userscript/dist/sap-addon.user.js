@@ -504,7 +504,7 @@ async function sapOpenSettingsPanel() {
         return `<div style="padding:6px 18px;font-size:14px;">
             <div style="color:#57606a;margin-bottom:4px;">${esc(item.label)}</div>
             <input type="${item.type}" data-cfg="${esc(item.id)}" value="${esc(value || "")}" placeholder="${esc(item.placeholder || "")}"
-                   style="width:100%;box-sizing:border-box;padding:7px 9px;border:1px solid #d0d7de;border-radius:6px;font-size:14px;">
+                   style="width:100%;box-sizing:border-box;padding:7px 9px;border:1px solid #d0d7de;border-radius:6px;font-size:14px;background:#fff;color:#1b1f24;">
         </div>`;
     }
     const isOn = (item) => (options[item.id] !== undefined ? options[item.id] !== false : item.def !== false);
@@ -521,7 +521,7 @@ async function sapOpenSettingsPanel() {
         ${sectionHeading("Configuration")}
         ${SAP_SETTINGS_SCHEMA.config.map((i) => configRow(i, config[i.id])).join("")}
         <div style="padding:10px 18px 0;">
-            <button id="sap-addon-show-banners" style="width:100%;padding:8px;border:1px solid #d0d7de;border-radius:6px;background:#f6f8fa;cursor:pointer;font-size:13px;">
+            <button id="sap-addon-show-banners" style="width:100%;padding:8px;border:1px solid #d0d7de;border-radius:6px;background:#f6f8fa;color:#1b1f24;cursor:pointer;font-size:13px;">
                 Show all GitHub banners again
             </button>
         </div>
