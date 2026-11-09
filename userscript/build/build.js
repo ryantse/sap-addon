@@ -24,6 +24,12 @@ function read(...p) {
     return fs.readFileSync(path.join(...p), "utf8");
 }
 
+/* --- @icon: embed the extension's icon as a data: URI so the single-file
+ * userscript is self-contained (no dependency on a hosted raw URL). We use the
+ * 48px icon to keep the header small (~2.5KB base64). ---------------------- */
+const iconDataUri =
+    "data:image/png;base64," + fs.readFileSync(path.join(REPO, "icons", "icon48.png")).toString("base64");
+
 /* --- @connect hosts: every origin the GitHub username fetch may hit -------- */
 const connectHosts = ["github.wdf.sap.corp", "github.tools.sap", "github.concur.com"];
 
@@ -146,6 +152,7 @@ const header = `// ==UserScript==
 // @description  Userscript port of the SAP Addon browser extension: auto login (GitHub, SharePoint, Stack@SAP, Mural, Jira, Pluralsight, Artifactory, DwC) and GitHub full-name replacement.
 // @author       Niko Lockenvitz (extension) / userscript port
 // @license      MIT
+// @icon         ${iconDataUri}
 ${matches.map((m) => `// @match        ${m}`).join("\n")}
 ${connectHosts.map((h) => `// @connect      ${h}`).join("\n")}
 // @run-at       document-start
