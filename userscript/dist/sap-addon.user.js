@@ -15,6 +15,7 @@
 // @match        *://jira.tools.sap/*
 // @match        *://app.pluralsight.com/*
 // @match        *://common.repositories.cloud.sap/*
+// @match        *://int.repositories.cloud.sap/*
 // @match        *://eng-srv.accounts.ondemand.com/*
 // @match        *://eng-srv.accounts400.ondemand.com/*
 // @match        *://dashboard.dwc.tools.sap/*
@@ -2381,7 +2382,7 @@ try { if (typeof main === "function") registerMainFunction(main); } catch (e) {}
 
 /* ======================= module: artifactory ======================= */
 (function () {
-if (!["common.repositories.cloud.sap"].includes(url.hostname)) return;
+if (!["common.repositories.cloud.sap","int.repositories.cloud.sap"].includes(url.hostname)) return;
 function isEnabled(optionName) { return !options || options[optionName] !== false; }
 /* ---- content_scripts/artifactory.js ---- */
 const artifactory = {

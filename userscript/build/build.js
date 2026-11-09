@@ -39,6 +39,7 @@ const matches = [
     "*://jira.tools.sap/*",
     "*://app.pluralsight.com/*",
     "*://common.repositories.cloud.sap/*",
+    "*://int.repositories.cloud.sap/*",
     "*://eng-srv.accounts.ondemand.com/*",
     "*://eng-srv.accounts400.ondemand.com/*",
     "*://dashboard.dwc.tools.sap/*",
@@ -92,7 +93,7 @@ const modules = [
     },
     {
         name: "artifactory",
-        hosts: ["common.repositories.cloud.sap"],
+        hosts: ["common.repositories.cloud.sap", "int.repositories.cloud.sap"],
         files: [["content_scripts/artifactory.js", cs("artifactory.js")]],
     },
     {
